@@ -14,9 +14,9 @@ RABBITMQ_LOG_BASE=/rabbitmq/rabbit_log
 EOF
 
 ## RabbitMq clusterin düzgün bir şekilde çalışabilmesi için .erlang.cookie dosyalarının eşlenik olması gerekmektedir. Bu sebeple tüm sunuculardaki aynı dosyanın içine 'MYCOOKIEVALUE' değerini giriyoruz ve rabbitmq userına buraya yetki veriyoruz.
-echo 'MYCOOKIEVALUE' | tee /rabbitmq/rabbit_data/.erlang.cookie
-chown rabbitmq:rabbitmq /rabbitmq/rabbit_data/.erlang.cookie
-chmod 400 /rabbitmq/rabbit_data/.erlang.cookie
+echo 1WEki2aws7nL15DjiKb3Uahs96Qoa3WamWsdy0tBlGfAuCeWJ1VBy3Lw > /var/lib/rabbitmq/.erlang.cookie
+chown rabbitmq:rabbitmq /var/lib/rabbitmq/.erlang.cookie
+chmod 400 /var/lib/rabbitmq/.erlang.cookie
 
 ## RabbitMq servisi enable ve start edilip, ardından cluster ayarları için stop duruma çekilmelidir.
 systemctl enable rabbitmq-server.service
