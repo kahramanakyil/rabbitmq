@@ -31,12 +31,8 @@ systemctl start rabbitmq-server.service
 rabbitmqctl start_app
 rabbitmq-plugins enable rabbitmq_management
 
-## Proje, monitoring ve admin ekipleri için kullanıcılar oluşturuyoruz. "$1" ve "$2" parametreleri playbooktan gelmektedir. User ve password için kullanılmıştır.
-rabbitmqctl add_user username password
-rabbitmqctl set_user_tags username administrator
-rabbitmqctl add_user username_monitoring password
-rabbitmqctl set_user_tags username_monitoring monitoring
-rabbitmqctl add_user $1 $2
-rabbitmqctl set_user_tags $1 administrator
-rabbitmqctl set_permissions -p / $1 ".*" ".*" ".*"
-rabbitmqctl set_permissions -p / username ".*"
+## Proje, monitoring ve admin ekipleri için kullanıcılar oluşturuyoruz. 
+sudo rabbitmqctl add_user admin AdminPassRabbitMQ
+sudo rabbitmqctl set_user_tags admin administrator
+sudo rabbitmqctl set_permissions -p / admin ".*" ".*" ".*"
+sudo rabbitmqctl add_vhost app-qa1
