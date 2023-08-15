@@ -11,9 +11,9 @@
     shell:
       cmd: |
         cat >> /etc/hosts << EOF
-        {{ node1 }}
-        {{ node2 }}
-        {{ node3 }}
+        {{ node1 }} node1
+        {{ node2 }} node2
+        {{ node3 }} node3
         EOF
         
 ## Sunuculara rabbitmq.sh dosyasını kopyalanır ve execute yetkisi verilir. Ardından bash dosyasını execute ederek kurulumu yapılır.
