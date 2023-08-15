@@ -21,7 +21,7 @@
       src: ./rabbitmq.sh
       dest: ./rabbitmq.sh
 
-  - name: Executable mod for redis.sh
+  - name: Executable mod for rabbitmq.sh
     shell: chmod +x ./rabbitmq.sh
     
   - name: Installing RabbitMq
