@@ -1,5 +1,6 @@
 ## Öncelikle sunuculara erlang ve rabbitmq kurulumunu yapıyoruz.
-apt install -y erlang rabbitmq-server
+sudo apt-get install curl gnupg apt-transport-https -y
+sudo apt install -y erlang rabbitmq-server
 systemctl stop rabbitmq-server.service
 
 ## Data ve log dosyaları için ayrı bir path oluşturup, rabbitmq userına gerekli yetkileri veriyoruz.
