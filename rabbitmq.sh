@@ -1,5 +1,5 @@
 #!/usr/bin/sh
-
+## Öncelikle sunuculara erlang ve rabbitmq kurulumunu yapıyoruz.
 sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get update -y
@@ -40,9 +40,8 @@ sudo apt-get install -y erlang-base \
 
 ## Install rabbitmq-server and its dependencies
 sudo apt-get update -y
+sudo apt-get install rabbitmq-server -y --fix-missing
 
-## Öncelikle sunuculara erlang ve rabbitmq kurulumunu yapıyoruz.
-apt install -y erlang rabbitmq-server
 systemctl stop rabbitmq-server.service
 
 ## Data ve log dosyaları için ayrı bir path oluşturup, rabbitmq userına gerekli yetkileri veriyoruz.
