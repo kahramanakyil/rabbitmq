@@ -1,5 +1,5 @@
 - name: Installing RabbitMQ to Prod Hosts
-  hosts: rabbitmq-cluster
+  hosts: {{ host_group }}
   order: sorted
   serial: 1
   become: yes
